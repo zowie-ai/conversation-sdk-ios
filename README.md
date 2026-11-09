@@ -31,7 +31,7 @@ Or reference it in your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/zowie-ai/conversation-sdk-ios", from: "2.0.0"),
+    .package(url: "https://github.com/zowie-ai/conversation-sdk-ios", from: "2.0.1"),
 ]
 ```
 
@@ -116,7 +116,7 @@ let config = ZowieChatConfig(
 | ------------------------- | ------------------ | ------------- | ----------------------------------------------------------------- |
 | `metadata`                | `Metadata?`        | `nil`         | User attributes. `metadata.locale` also selects the AI agent's region. |
 | `externalAccessToken`     | `String?`          | `nil`         | JWT for authenticated sessions; anonymous when omitted.           |
-| `context`                 | `String?`          | `nil`         | Custom context string passed to the AI agent.                     |
+| `context`                 | `String?`          | `nil`         | ID of a context set up by your Zowie TAM. It routes the conversation to the AI agent assigned to that context. |
 | `resetSession`            | `Bool`             | `false`       | Clear any persisted session on init.                              |
 | `initialConversationMode` | `ConversationMode` | `.text`       | Mode the chat opens in (`.text` or `.voice`).                     |
 | `versionType`             | `VersionType`      | `.production` | AI agent version to run: `.production` or `.staging`.             |
