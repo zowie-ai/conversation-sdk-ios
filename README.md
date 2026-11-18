@@ -31,7 +31,7 @@ Or reference it in your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/zowie-ai/conversation-sdk-ios", from: "2.0.1"),
+    .package(url: "https://github.com/zowie-ai/conversation-sdk-ios", from: "2.0.2"),
 ]
 ```
 
