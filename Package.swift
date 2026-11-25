@@ -11,8 +11,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "ZowieConversationSDK",
-            url: "https://github.com/zowie-ai/conversation-sdk-ios/releases/download/2.0.2/ZowieConversationSDK.xcframework.zip",
-            checksum: "2ab689e01d93887970a6c9e1b11fc9aa6e7ca5c95ab9e77e34b6a194d30dd324"
+            url: "https://github.com/zowie-ai/conversation-sdk-ios/releases/download/2.1.0/ZowieConversationSDK.xcframework.zip",
+            checksum: "c638fc6c7bca1753bf1d73d3c1978226f83a7e67235a0d041455f348c6ef16bf"
         ),
     ]
 )

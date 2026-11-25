@@ -31,7 +31,7 @@ Or reference it in your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/zowie-ai/conversation-sdk-ios", from: "2.0.2"),
+    .package(url: "https://github.com/zowie-ai/conversation-sdk-ios", from: "2.1.0"),
 ]
 ```
 
@@ -189,6 +189,7 @@ event fires.
 | `minimized`       | --                                      | The user tapped the minimize control.                                                                                                                                                                        |
 | `configError`     | `error: Error`                          | The chat failed to load or configure itself. Fires both when the remote configuration fetch fails (the chat still opens with the default appearance) and when the chat itself never opens (network failure). |
 | `genericEvent`    | `name: String`, `params: [String: String]` | A backend event fired (Decision Engine).                                                                                                                                                                     |
+| `cartItemsModified` | `items: [CartModifiedItem]`           | The AI agent added products to or removed them from the cart.                                                                                                                                                |
 | `commandDropped`  | `command: String`                       | A command was sent before the chat was ready and was dropped.                                                                                                                                                |
 
 ## Link handling
@@ -344,12 +345,22 @@ in the light theme and white text in the dark theme. A value set on
 
 Passed to the download hook. Exactly one of `base64` or `url` is set.
 
-| Field      | Type      | Description                                                    |
-| ---------- | --------- | -------------------------------------------------------------- |
-| `filename` | `String`  | Suggested file name.                                           |
-| `mimeType` | `String?` | MIME type, when known.                                         |
-| `base64`   | `String?` | Base64 contents, for client-generated files (e.g. transcript). |
-| `url`      | `String?` | Direct download URL.                                           |
+| Field      | Type      | Description                                                                                      |
+| ---------- | --------- | ------------------------------------------------------------------------------------------------ |
+| `filename` | `String`  | Suggested file name. Empty for a `url` download the chat does not name.                          |
+| `mimeType` | `String?` | MIME type, when known.                                                                           |
+| `base64`   | `String?` | Base64 contents, for client-generated files (e.g. transcript).                                   |
+| `url`      | `String?` | Direct download URL.                                                                             |
+
+### `CartModifiedItem`
+
+Passed with `cartItemsModified`. Use it to mirror the cart changes in your app's own cart.
+
+| Field              | Type                   | Description                     |
+| ------------------ | ---------------------- | ------------------------------- |
+| `productId`        | `String`               | ID of the product variant.      |
+| `quantity`         | `Int`                  | Quantity added or removed.      |
+| `modificationType` | `CartModificationType` | `.added` or `.removed`.         |
 
 ## Controlling the chat
 

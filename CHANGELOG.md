@@ -1,3 +1,8 @@
+## 2.1.0
+
+- Added the `cartItemsModified` event.
+- Security fixes.
+
 ## 2.0.2
 
 - XCFramework built with Xcode 26 for compatibility with Xcode 26+ projects.
